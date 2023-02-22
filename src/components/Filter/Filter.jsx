@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
+import css from './Filter.module.css';
 
 const Filter = ({ name, onChange }) => (
   <>
     <label>
       <input
+        className={css.inputFilter}
         placeholder="Enter to search..."
         type="text"
         name={name}

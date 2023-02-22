@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
-import { FcCellPhone} from "react-icons/fc";
+import { FcCellPhone } from 'react-icons/fc';
+import css from './ContactItem.module.css';
 
 function ContactItem({ id, name, number, onDeleteContact }) {
   return (
     <>
-      <a className="link" href="tel:{number}">
-        <p className="name">{name}</p>
-        <div className="numberWrapper">
-                  <p className="number">{number}</p>
-                  <FcCellPhone/>
+      <a className={css.link} href="tel:{number}">
+        <p className={css.name}>{name}</p>
+        <div className={css.numberWrapper}>
+          <p className={css.number}>{number}</p>
+          <FcCellPhone />
         </div>
       </a>
       <button
-        className="buttonDelete"
+        className={css.btnDeleted}
         type="button"
         onClick={() => onDeleteContact(id)}
       >
@@ -30,5 +31,3 @@ ContactItem.propTypes = {
   number: PropTypes.string.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
 };
-
-
